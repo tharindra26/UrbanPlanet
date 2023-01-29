@@ -1,0 +1,57 @@
+<div class="container">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="item">
+      <a (click)="filter(null,null)">
+        <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+        <h6>All products</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('','men')">
+        <img src="https://thumbs.dreamstime.com/b/fashion-clothes-short-sleeve-shirt-pants-men-photo-white-background-fashion-clothes-short-sleeve-shirt-pants-men-photo-149185132.jpg" alt="">
+        <h6>Men</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('','women')">
+        <img src="https://thumbs.dreamstime.com/b/portrait-beautiful-girl-model-casual-summer-clothes-no-makeup-white-background-beautiful-girl-model-casual-summer-100630200.jpg" alt="">
+        <h6>Women</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('jewellery','')">
+        <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+        <h6>Jewellery</h6>
+      </a>
+    </div>
+    <form class="d-flex" role="search">
+      <input name="searchTerm" class="form-control me-2" [(ngModel)]="searchTerm" (keyup)="search($event)" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <button routerLink="../cart" class="btn btn-primary" style="margin-left: 50px">
+      <i class="fas fa-cart-plus" style="font-size: 20px"></i>
+      <div class="badge bg-danger" style="font-size: 10px">{{totalItem}}</div>
+    </button>
+  </div>
+</nav>
+</div>
+
+
+
+<div class="container">
+  <div class="row d-flex ">
+    <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+      <div class="card col-md-3">
+        <img src="{{item.retrievedImage}}" alt="">
+        <h5 style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 100ch">{{item.title}}</h5>
+        <p style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis; max-width: 100ch">{{item.description}}</p>
+        <p><strong>Price:</strong>Rs.{{item.price}}.00</p>
+        <button class="btn btn-primary" (click)="addtocart(item)">Add to cart</button>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+
+

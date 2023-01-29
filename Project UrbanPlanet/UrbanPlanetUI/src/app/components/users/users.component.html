@@ -1,0 +1,32 @@
+
+  <h1  style="margin-left: 20px">Users Admin</h1>
+  <button type="button" (click)="addUser()" class="btn btn-dark" style="margin-left: 20px;margin-bottom: 30px">+Add User</button>
+
+<div class="container row ">
+  <div   class="col-md-6 text-center ">
+    <div class="container ">
+    <table class="table table-striped table-hover .table-responsive">
+      <thead class="thead table-dark">
+      <tr>
+        <th scope="col" style="width: 20%">ID</th>
+        <th scope="col" style="width: 20%">Name</th>
+        <th scope="col" style="width: 20%"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users" >
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="viewUser(user.id)">Show Details</button></td>
+      </tr>
+      </tbody>
+    </table>
+      </div>
+  </div>
+  <div   class="col-md-6">
+    <app-adduser *ngIf="action=='add'" [user]="selectedUser" (userAddedEvent)="refreshData()"></app-adduser>
+    <app-viewuser *ngIf="action === 'view'" [user]="selectedUser" (userDeletedEvent)="refreshData()"></app-viewuser>
+  </div>
+</div>
+
+

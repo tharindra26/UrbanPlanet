@@ -1,0 +1,39 @@
+<h1>Product Details</h1>
+
+<table class="table table-striped-columns">
+
+  <tbody>
+  <tr>
+    <th scope="row">Product Id</th>
+    <td>{{product.id}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Title</th>
+    <td colspan="2">{{product.title}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Description</th>
+    <td >{{product.description}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Category</th>
+    <td colspan="2">{{product.category}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Gender</th>
+    <td colspan="2">{{product.gender}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Price</th>
+    <td colspan="2">{{product.price}}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+<br>
+<img src="{{product.retrievedImage}}" height="200" width="200" style="border-radius:20px ">
+
+<a style="margin-right: 50px;margin-left: 50px; margin-top: 30px" class="btn btn-small btn-warning" (click)="editProduct()">Edit</a>
+<a style="margin-top: 30px" class="btn btn-small btn-danger" (click)="deleteProduct()">Delete</a>
+

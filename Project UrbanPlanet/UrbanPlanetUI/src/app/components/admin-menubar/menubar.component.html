@@ -1,0 +1,46 @@
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-body-tertiary" >
+  <div class="container-fluid">
+
+
+    <a href="#" class="navbar-brand mb-0 h1" >
+      <i style="font-size: 40px;" class="fa-sharp fa-solid fa-store"></i>
+      &nbsp;
+      <strong style="letter-spacing: 3px;font-size: 30px;">URBAN PLANET</strong>
+    </a>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+        <li class="nav-item active">
+          <a routerLink="users" class="nav-link">
+            Users
+          </a>
+        </li>
+
+        <li class="nav-item active">
+          <a routerLink="products" class="nav-link">
+            Products
+          </a>
+        </li>
+
+        <li class="nav-item active">
+          <a href="#" class="nav-link">
+            LogOut
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div>
+  <router-outlet> </router-outlet>
+</div>
+
+
